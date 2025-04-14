@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>담배 재고조사 (페이지 전환)</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .item {
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
+    }
+
+    .controls {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-top: 5px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 4px 8px;
+      cursor: pointer;
+    }
+
+    .group-title {
+      font-size: 1.2em;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    #result,
+    #boxChecklist,
+    #finalBoxDiff {
+      margin-top: 30px;
+      white-space: pre-wrap;
+      background: #f9f9f9;
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+
+    #save-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 10px 16px;
+      font-size: 16px;
+      z-index: 999;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
+
+    #save-btn:hover {
+      background-color: #0056b3;
+    }
+
+    #total-btn {
+      bottom: 20px;
+      right: 20px;
+      padding: 10px 16px;
+      font-size: 16px;
+      z-index: 999;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
+
+    #total-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+  <script src="cig_inventory.js"></script>
+  <h1>담배 재고조사</h1>
+  <div id="controls">
+    <button onclick="changePage(-1)">◀ 이전</button>
+    <span id="pageInfo"></span>
+    <button onclick="changePage(1)">다음 ▶</button>
+  </div>
+  <div id="inventory"></div>
+  <button onclick="generateChecklist()" id="save-btn">보루 확인하기</button>
+  <div id="boxChecklist"></div>
+  <div id="finalBoxDiff"></div>
+</body>
+
+</html>
